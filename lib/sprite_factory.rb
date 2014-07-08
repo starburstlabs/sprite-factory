@@ -1,5 +1,5 @@
 module SpriteFactory
-  
+
   #----------------------------------------------------------------------------
 
   VERSION     = "1.6.0"
@@ -50,7 +50,7 @@ module SpriteFactory
     end
 
   end
-  
+
   #----------------------------------------------------------------------------
 
   module Library # abstract module for using various image libraries
@@ -58,6 +58,7 @@ module SpriteFactory
     autoload :RMagick,     File.join(LIB, 'sprite_factory/library/rmagick')      # concrete module for using RMagick     (loaded on demand)
     autoload :ChunkyPng,   File.join(LIB, 'sprite_factory/library/chunky_png')   # concrete module for using ChunkyPng   (ditto)
     autoload :ImageMagick, File.join(LIB, 'sprite_factory/library/image_magick') # concrete module for using ImageMagick (ditto)
+    autoload :ResizedSprites, File.join(LIB, 'sprite_factory/library/resized_sprites')
 
     def self.rmagick
       RMagick
@@ -66,7 +67,11 @@ module SpriteFactory
     def self.chunkypng
       ChunkyPng
     end
-    
+
+    def self.resized_sprites
+      ResizedSprites
+    end
+
     def self.image_magick
       ImageMagick
     end
@@ -82,4 +87,3 @@ module SpriteFactory
   #----------------------------------------------------------------------------
 
 end
-
