@@ -9,7 +9,7 @@ module SpriteFactory
       def self.load(files)
         files.map do |filename|
           image = ChunkyPNG::Image.from_file(filename)
-          image = image.resize(image.width / 2, image.height / 2)
+          image = image.resize(20, 20)
           {
             :filename => filename,
             :image    => image,
@@ -27,6 +27,6 @@ module SpriteFactory
         target.save(filename, :best_compression)
       end
 
-    end # module ResizableSprites
+    end # module ResizedSprites
   end # module Library
 end # module SpriteFactory
